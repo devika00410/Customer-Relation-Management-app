@@ -1,7 +1,7 @@
 const Case= require('../Model/Case')
 
 // Get all case
-const getCases=async (req,res) =>{
+exports.getCases=async (req,res) =>{
     try{
         const cases=await Case.find().popuulate('customerId')
         res.json(cases)
@@ -11,7 +11,7 @@ const getCases=async (req,res) =>{
 }
 
 // Add new case
-const addCase=async (req,res)=>{
+exports.addCase=async (req,res)=>{
     try{
     const caseItem =new Case(req.body);
     await caseItem.save();
@@ -24,7 +24,7 @@ const addCase=async (req,res)=>{
 }
 
 // Update case
-const updateCase=async (req,res)=>{
+exports.updateCase=async (req,res)=>{
     try{
     const caseItem=await Case.findByIdAndUpdate(req.params.id,req.body,{new:true}).populate('customerId');
     if(!caseItem){
@@ -40,7 +40,7 @@ const updateCase=async (req,res)=>{
 
 // Delete Case
 
-const deleteCase=async (req,res)=>{
+exports.deleteCase=async (req,res)=>{
     try{
         const caseItem=await Case.findByIdAndDelete(req.params.id)
         if(!caseItem){
@@ -53,4 +53,3 @@ const deleteCase=async (req,res)=>{
     }
 }
 
-module.exports={getCases,addCase,updateCase,deleteCase}

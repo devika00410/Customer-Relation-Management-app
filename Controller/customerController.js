@@ -2,7 +2,7 @@ const Customer=require('../Model/Customer')
 
 
 // Get all customers
-const getCustomers=async(req,res)=>{
+exports.getCustomers=async(req,res)=>{
     try{
         const customers=await Customer.find();
         res.json(customers)
@@ -14,7 +14,7 @@ const getCustomers=async(req,res)=>{
 
 // Add new customers
 
-const addCustomer=async (req,res)=>{
+exports.addCustomer=async (req,res)=>{
     try{
         const customer=new Customer(req.body)
         await customer.save()
@@ -27,7 +27,7 @@ const addCustomer=async (req,res)=>{
 
 // Update Customer
 
-const updateCustomer= async (req,res)=>{
+exports.updateCustomer= async (req,res)=>{
     try{
         const customer= await Customer.findByIdAndUpdate(req.params.id,req.body,{new:true});
         if(!customer){
@@ -42,7 +42,7 @@ const updateCustomer= async (req,res)=>{
 
 // Delete customer
 
-const deleteCustomer = async(req,res)=>{
+exports.deleteCustomer = async(req,res)=>{
     try{
         const customer=await Customer.findByIdAndDelete(req.params.id)
         if(!customer){
@@ -55,4 +55,3 @@ const deleteCustomer = async(req,res)=>{
     }
 }
 
-module.exports={getCustomers,addCustomer,updateCustomer,deleteCustomer}
