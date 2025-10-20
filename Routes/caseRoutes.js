@@ -9,6 +9,7 @@ router.post('/cases',caseController.addCase)
 router.patch('/cases/:id',caseController.updateCase)
 router.delete('/cases/:id',caseController.deleteCase)
 
+
 router.get('/cases',auth,caseController.getCases)
 router.post('/cases',auth, authorizeRoles('admin','user'),caseController.addCase)
 router.patch('/cases/:id',auth,caseController.updateCase)

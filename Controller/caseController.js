@@ -3,7 +3,7 @@ const Case= require('../Model/Case')
 // Get all case
 exports.getCases=async (req,res) =>{
     try{
-        const cases=await Case.find().popuulate('customerId')
+        const cases=await Case.find().populate('customerId')
         res.json(cases)
     } catch(error){
         res.status(500).json({error:error.message})
