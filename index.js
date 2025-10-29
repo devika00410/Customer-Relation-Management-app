@@ -21,7 +21,7 @@ app.use(cors({
 
 
 
-// Add this after your CORS setup in index.js
+
 app.use((req, res, next) => {
   console.log('=== INCOMING REQUEST ===');
   console.log('Method:', req.method);
@@ -31,23 +31,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// Add this before your other routes in index.js
-// app.get('/api/test', (req, res) => {
-//   console.log('✅ Test route hit - No auth required');
-//   res.json({ message: "Test route working - no authentication" });
-// });
-
-// app.get('/api/test-protected', (req, res) => {
-//   console.log('🔐 Test protected route hit');
-//   console.log('Authorization Header:', req.headers.authorization);
-  
-//   const token = req.headers.authorization?.replace('Bearer ', '');
-//   if (!token) {
-//     return res.status(401).json({ message: "Authentication required" });
-//   }
-  
-//   res.json({ message: "Protected route working", tokenReceived: true });
-// });
 
 // Routes
 app.use('/api',require('./Routes/customerRoutes'))
