@@ -1,16 +1,82 @@
-# React + Vite
+# CRM Application - MERN Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A complete Customer Relationship Management system built with the MERN stack, featuring user authentication and customer management capabilities.
 
-Currently, two official plugins are available:
+## Demo Video
+[Click here to watch the application demo video](https://drive.google.com/drive/folders/1DqfEg7bajV9R7Y9k9zDXwRPX4b8UkE0x?usp=sharing) showing all features including user registration, login, customer management, and role-based access control.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Assignment Requirements Fulfilled
 
-## React Compiler
+### Project Structure & Organization
+- Modular folder structure for both frontend and backend
+- Separation of concerns with controllers, models, and routes
+- Proper component organization in React
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Database Connectivity
+- MongoDB integration with Mongoose ODM
+- User and Customer data models
+- Secure database operations
 
-## Expanding the ESLint configuration
+### User Authentication Implementation
+- User registration and login system
+- JWT token-based authentication
+- Password encryption with bcrypt
+- Protected routes and middleware
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Frontend Functionality
+- Responsive React.js user interface
+- Customer CRUD operations (Create, Read, Update, Delete)
+- Role-based access control
+- Form validation and error handling
+
+### Documentation
+- Comprehensive code documentation
+- API endpoint documentation
+- Setup and deployment instructions
+
+## Features
+
+### Authentication System
+- User registration with email and password
+- Secure login with JWT tokens
+- Role-based authorization (Admin/User)
+- Protected routes and API endpoints
+
+### Customer Management
+- Add new customers with complete details
+- View customer list with search and filter
+- Edit existing customer information
+- Delete customers with confirmation
+- Customer status tracking (Active/Inactive)
+
+### User Experience
+- Clean and intuitive user interface
+- Responsive design for all devices
+- Real-time form validation
+- Loading states and error messages
+- Navigation between different sections
+
+## Technology Stack
+
+**Frontend:** React.js, React Router, Axios, CSS3  
+**Backend:** Node.js, Express.js, MongoDB, Mongoose  
+**Authentication:** JWT, bcryptjs  
+**Security:** CORS, environment variables
+
+## Project Structure
+
+The application follows a clean architecture with separate frontend and backend components, organized for scalability and maintainability.
+
+## Security Features
+
+- Password hashing with salt rounds
+- JWT token expiration
+- Route protection middleware
+- Input validation and sanitization
+- CORS configuration for cross-origin requests
+
+## User Roles
+
+**Admin Users:** Full access to all customer management features  
+**Regular Users:** Read-only access to customer data
+
